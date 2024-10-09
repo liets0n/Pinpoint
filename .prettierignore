@@ -1,0 +1,9 @@
+# Ignore artifacts:
+build
+coverage
+
+.DS_Store
+.gitignore
+
+# Ignore all HTML files:
+**/*.html

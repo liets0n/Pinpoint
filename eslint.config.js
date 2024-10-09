@@ -1,28 +1,52 @@
-import js from '@eslint/js'
 import globals from 'globals'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
+import pluginJs from '@eslint/js'
 import tseslint from 'typescript-eslint'
+import hooksPlugin from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import jsxA11y from 'eslint-plugin-jsx-a11y'
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
+import eslintPluginUnicorn from 'eslint-plugin-unicorn'
 
-export default tseslint.config(
-  { ignores: ['dist'] },
+export default [
+  { ignores: ['node_modules/', 'dist/', 'build/'] },
+  { files: ['**/*.{ts,tsx}'] },
+  { languageOptions: { globals: globals.browser } },
+  eslintPluginPrettierRecommended,
+  pluginJs.configs.recommended,
+  ...tseslint.configs.recommended,
+  jsxA11y.flatConfigs.recommended,
+  eslintPluginUnicorn.configs['flat/recommended'],
   {
-    extends: [js.configs.recommended, ...tseslint.configs.recommended],
-    files: ['**/*.{ts,tsx}'],
-    languageOptions: {
-      ecmaVersion: 2020,
-      globals: globals.browser,
-    },
     plugins: {
-      'react-hooks': reactHooks,
-      'react-refresh': reactRefresh,
+      'react-hooks': hooksPlugin,
+      'react-refresh': reactRefresh
     },
     rules: {
-      ...reactHooks.configs.recommended.rules,
+      ...hooksPlugin.configs.recommended.rules,
       'react-refresh/only-export-components': [
         'warn',
-        { allowConstantExport: true },
+        { allowConstantExport: true }
       ],
-    },
-  },
-)
+      'unicorn/better-regex': 'warn',
+      'unicorn/filename-case': [
+        'error',
+        {
+          case: 'camelCase',
+          ignore: ['App.tsx', 'vite-env.d.ts']
+        }
+      ],
+      'unicorn/prevent-abbreviations': [
+        'error',
+        {
+          ignore: ['env']
+        }
+      ],
+      'arrow-body-style': [
+        'error',
+        'as-needed',
+        { requireReturnForObjectLiteral: true }
+      ],
+      'prefer-arrow-callback': 'error'
+    }
+  }
+]
