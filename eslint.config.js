@@ -41,11 +41,6 @@ export default [
           ignore: ['env']
         }
       ],
-      'arrow-body-style': [
-        'error',
-        'as-needed',
-        { requireReturnForObjectLiteral: true }
-      ],
       'prefer-arrow-callback': 'error',
       'no-duplicate-imports': ['error', { includeExports: true }],
       'no-self-compare': 'error',
