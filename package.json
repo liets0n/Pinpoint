@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "lint": "eslint src --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint --fix src",
-    "format": "prettier --write src --config ./.prettierrc.json",
+    "format": "prettier --write src --config ./.prettierrc",
     "prepare": "husky"
   },
   "config": {
