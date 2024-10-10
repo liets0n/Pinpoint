@@ -17,7 +17,9 @@
       "path": "node_modules/cz-emoji"
     },
     "cz-emoji": {
-      "skipQuestions": ["scope"]
+      "skipQuestions": [
+        "scope"
+      ]
     }
   },
   "lint-staged": {
@@ -28,7 +30,8 @@
   },
   "dependencies": {
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "styled-components": "^6.1.13"
   },
   "devDependencies": {
     "@eslint/js": "^9.12.0",

@@ -1,8 +1,15 @@
+import { ThemeProvider } from 'styled-components'
+
+import { Home } from './pages'
+import { Default } from './styles/theme'
+import { GlobalStyle } from './styles/global'
+
 function App() {
   return (
-    <>
-      <h1>Pinpoint</h1>
-    </>
+    <ThemeProvider theme={Default}>
+      <Home />
+      <GlobalStyle />
+    </ThemeProvider>
   )
 }
 
