@@ -19,9 +19,11 @@ const GlobalStyle = createGlobalStyle`
 
   body, ul, ol, li,
   textarea, input, select, button {
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
     font-weight: 400;
     font-size: 1rem;
+    font-style: normal;
   }
 `
 
