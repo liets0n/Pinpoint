@@ -6,6 +6,7 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import jsxA11y from 'eslint-plugin-jsx-a11y'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import eslintPluginUnicorn from 'eslint-plugin-unicorn'
+import pluginQuery from '@tanstack/eslint-plugin-query'
 
 export default [
   { ignores: ['node_modules/', 'dist/', 'build/'] },
@@ -16,6 +17,7 @@ export default [
   ...tseslint.configs.recommended,
   jsxA11y.flatConfigs.recommended,
   eslintPluginUnicorn.configs['flat/recommended'],
+  ...pluginQuery.configs['flat/recommended'],
   {
     plugins: {
       'react-hooks': hooksPlugin,
