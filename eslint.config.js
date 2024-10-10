@@ -35,12 +35,7 @@ export default [
           ignore: ['App.tsx', 'vite-env.d.ts']
         }
       ],
-      'unicorn/prevent-abbreviations': [
-        'error',
-        {
-          ignore: ['env']
-        }
-      ],
+      'unicorn/prevent-abbreviations': 'off',
       'prefer-arrow-callback': 'error',
       'no-duplicate-imports': ['error', { includeExports: true }],
       'no-self-compare': 'error',
