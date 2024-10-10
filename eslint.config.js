@@ -46,7 +46,15 @@ export default [
         'as-needed',
         { requireReturnForObjectLiteral: true }
       ],
-      'prefer-arrow-callback': 'error'
+      'prefer-arrow-callback': 'error',
+      'no-duplicate-imports': ['error', { includeExports: true }],
+      'no-self-compare': 'error',
+      'no-template-curly-in-string': 'error',
+      'block-scoped-var': 'error',
+      'camelcase': 'error',
+      'capitalized-comments': ['error'],
+      'default-case': 'error',
+      'no-empty-function': 'error'
     }
   }
 ]
