@@ -33,7 +33,7 @@ export default [
       'unicorn/filename-case': [
         'error',
         {
-          case: 'camelcase',
+          case: 'camelCase',
           ignore: ['App.tsx', 'vite-env.d.ts']
         }
       ],
