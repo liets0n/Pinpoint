@@ -33,11 +33,10 @@ export default [
       'unicorn/filename-case': [
         'error',
         {
-          case: 'camelCase',
+          case: 'camelcase',
           ignore: ['App.tsx', 'vite-env.d.ts']
         }
       ],
-      'unicorn/prevent-abbreviations': 'off',
       'prefer-arrow-callback': 'error',
       'no-duplicate-imports': ['error', { includeExports: true }],
       'no-self-compare': 'error',
@@ -46,7 +45,10 @@ export default [
       'camelcase': 'error',
       'capitalized-comments': ['error'],
       'default-case': 'error',
-      'no-empty-function': 'error'
+      'no-empty-function': 'error',
+
+      'unicorn/prevent-abbreviations': 'off',
+      'unicorn/no-null': 'off'
     }
   }
 ]
