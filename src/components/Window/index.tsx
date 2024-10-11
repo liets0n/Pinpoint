@@ -3,7 +3,7 @@ import { type ReactNode } from 'react'
 import { Wrapper } from './styles'
 
 type Props = {
-  children?: ReactNode
+  children: ReactNode
   windowTitle: string
 }
 

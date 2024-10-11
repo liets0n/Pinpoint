@@ -4,7 +4,7 @@ import { useQuery } from '@tanstack/react-query'
 import { API } from './../../services'
 import { Header } from './../../layout'
 import { Wrapper, Container } from './styles'
-import { Window, IpSearchInput, DataDisplayList } from './../../components'
+import { Window, IpSearchInput, DataDisplayList, Map } from './../../components'
 
 const Home = () => {
   const [ipAddress, setIpAddress] = useState('0.0.0.0')
@@ -49,7 +49,13 @@ const Home = () => {
           />
         </div>
 
-        <Window windowTitle='MAP' />
+        <Window windowTitle='MAP'>
+          <Map
+            lat={data.latitude}
+            lng={data.longitude}
+            currentIpAddress={data.ip}
+          />
+        </Window>
       </Container>
     </Wrapper>
   )
