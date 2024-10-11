@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
+import { Analytics } from '@vercel/analytics/react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 import { Home } from './pages'
@@ -14,6 +15,7 @@ function App() {
       <ThemeProvider theme={Default}>
         <Home />
         <GlobalStyle />
+        <Analytics />
       </ThemeProvider>
     </QueryClientProvider>
   )
