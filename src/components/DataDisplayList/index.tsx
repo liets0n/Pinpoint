@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { useTranslation } from 'react-i18next'
+
 import { Wrapper } from './styles'
 import { textFormatter } from '../../utils'
 
@@ -37,6 +39,7 @@ type Props = {
 }
 
 const DataDisplayList = ({ data }: Props) => {
+  const { t } = useTranslation()
   const currentTime = new Date(String(data.time_zone.current_time))
 
   return (
@@ -44,28 +47,40 @@ const DataDisplayList = ({ data }: Props) => {
       <ul className='list'>
         <li className='list__item'>
           <p className='item__text'>
-            <span className='text--emphasis'>IPV4:</span> &nbsp;
+            <span className='text--emphasis'>
+              {t('home.dataDisplayList.ipv4')}
+            </span>
+            &nbsp;
             <span>{textFormatter(data.ip)}</span>
           </p>
         </li>
 
         <li className='list__item'>
           <p className='item__text'>
-            <span className='text--emphasis'>City:</span> &nbsp;
+            <span className='text--emphasis'>
+              {t('home.dataDisplayList.city')}
+            </span>
+            &nbsp;
             <span>{textFormatter(data.city)}</span>
           </p>
         </li>
 
         <li className='list__item'>
           <p className='item__text'>
-            <span className='text--emphasis'>State:</span> &nbsp;
+            <span className='text--emphasis'>
+              {t('home.dataDisplayList.state')}
+            </span>
+            &nbsp;
             <span>{textFormatter(data.region)}</span>
           </p>
         </li>
 
         <li className='list__item'>
           <p className='item__text'>
-            <span className='text--emphasis'>Country:</span> &nbsp;
+            <span className='text--emphasis'>
+              {t('home.dataDisplayList.country')}
+            </span>
+            &nbsp;
             <span>
               {textFormatter(`${data.country_name} ${data.emoji_flag}`)}
             </span>
@@ -74,35 +89,50 @@ const DataDisplayList = ({ data }: Props) => {
 
         <li className='list__item'>
           <p className='item__text'>
-            <span className='text--emphasis'>Continent:</span> &nbsp;
+            <span className='text--emphasis'>
+              {t('home.dataDisplayList.continent')}
+            </span>
+            &nbsp;
             <span>{textFormatter(data.continent_name)}</span>
           </p>
         </li>
 
         <li className='list__item'>
           <p className='item__text'>
-            <span className='text--emphasis'>Current Time:</span> &nbsp;
+            <span className='text--emphasis'>
+              {t('home.dataDisplayList.currentTime')}
+            </span>
+            &nbsp;
             <span>{textFormatter(currentTime.toLocaleString())}</span>
           </p>
         </li>
 
         <li className='list__item'>
           <p className='item__text'>
-            <span className='text--emphasis'>Latitude:</span> &nbsp;
+            <span className='text--emphasis'>
+              {t('home.dataDisplayList.latitude')}
+            </span>
+            &nbsp;
             <span>{textFormatter(data.latitude)}</span>
           </p>
         </li>
 
         <li className='list__item'>
           <p className='item__text'>
-            <span className='text--emphasis'>Longitude:</span> &nbsp;
+            <span className='text--emphasis'>
+              {t('home.dataDisplayList.longitude')}
+            </span>
+            &nbsp;
             <span>{textFormatter(data.longitude)}</span>
           </p>
         </li>
 
         <li className='list__item'>
           <p className='item__text'>
-            <span className='text--emphasis'>Language:</span> &nbsp;
+            <span className='text--emphasis'>
+              {t('home.dataDisplayList.idiom')}
+            </span>
+            &nbsp;
             <span>
               {textFormatter(
                 Array.isArray(data.languages) && data.languages.length > 0
@@ -115,7 +145,10 @@ const DataDisplayList = ({ data }: Props) => {
 
         <li className='list__item'>
           <p className='item__text'>
-            <span className='text--emphasis'>Currency:</span> &nbsp;
+            <span className='text--emphasis'>
+              {t('home.dataDisplayList.currency')}
+            </span>
+            &nbsp;
             <span>
               {textFormatter(`${data.currency.name} (${data.currency.code})`)}
             </span>
@@ -124,42 +157,60 @@ const DataDisplayList = ({ data }: Props) => {
 
         <li className='list__item'>
           <p className='item__text'>
-            <span className='text--emphasis'>DDD:</span> &nbsp;
+            <span className='text--emphasis'>
+              {t('home.dataDisplayList.ddd')}
+            </span>
+            &nbsp;
             <span>{textFormatter(`+${data.calling_code}`)}</span>
           </p>
         </li>
 
         <li className='list__item'>
-          <p className='item__text'>
-            <span className='text--emphasis'>ASN:</span> &nbsp;
+          <p className='item__text' title={String(data.asn.name)}>
+            <span className='text--emphasis'>
+              {t('home.dataDisplayList.asn')}
+            </span>
+            &nbsp;
             <span>{textFormatter(data.asn.name)}</span>
           </p>
         </li>
 
         <li className='list__item'>
           <p className='item__text'>
-            <span className='text--emphasis'>ASN Domain:</span> &nbsp;
+            <span className='text--emphasis'>
+              {t('home.dataDisplayList.asnDomain')}
+            </span>
+            &nbsp;
             <span>{textFormatter(data.asn.domain)}</span>
           </p>
         </li>
 
         <li className='list__item'>
           <p className='item__text'>
-            <span className='text--emphasis'>Tor:</span> &nbsp;
+            <span className='text--emphasis'>
+              {t('home.dataDisplayList.tor')}
+            </span>
+            &nbsp;
             <span>{textFormatter(data.threat.is_tor)}</span>
           </p>
         </li>
 
         <li className='list__item'>
           <p className='item__text'>
-            <span className='text--emphasis'>Proxy:</span> &nbsp;
+            <span className='text--emphasis'>
+              {t('home.dataDisplayList.proxy')}
+            </span>
+            &nbsp;
             <span>{textFormatter(data.threat.is_proxy)}</span>
           </p>
         </li>
 
         <li className='list__item'>
           <p className='item__text'>
-            <span className='text--emphasis'>Data Center:</span> &nbsp;
+            <span className='text--emphasis'>
+              {t('home.dataDisplayList.dataCenter')}
+            </span>
+            &nbsp;
             <span>{textFormatter(data.threat.is_datacenter)}</span>
           </p>
         </li>
