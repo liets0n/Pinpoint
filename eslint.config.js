@@ -48,7 +48,8 @@ export default [
       'no-empty-function': 'error',
 
       'unicorn/prevent-abbreviations': 'off',
-      'unicorn/no-null': 'off'
+      'unicorn/no-null': 'off',
+      'unicorn/prefer-export-from': 'off'
     }
   }
 ]
