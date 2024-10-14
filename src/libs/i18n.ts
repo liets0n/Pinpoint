@@ -5,10 +5,13 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 import translations from './../locales'
 
 const i18nConfig = {
-  supportedLngs: ['en'],
+  supportedLngs: ['en', 'pt'],
   resources: translations,
   fallbackLng: 'en',
-  defaultNS: 'translations'
+  defaultNS: 'translations',
+  lowerCaseLng: true,
+  cleanCode: true,
+  nonExplicitSupportedLngs: true
 }
 
 void i18n.use(LanguageDetector).use(initReactI18next).init(i18nConfig)
