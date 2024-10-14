@@ -3,7 +3,19 @@ import { useTranslation } from 'react-i18next'
 import { Wrapper } from './styles'
 
 const Header = () => {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+
+  const checkCurrentLanguage = (value: string) => {
+    if (value.includes('en')) {
+      return 'en'
+    }
+
+    if (value.includes('pt')) {
+      return 'pt'
+    }
+
+    return ''
+  }
 
   return (
     <Wrapper>
@@ -27,11 +39,12 @@ const Header = () => {
           name='language'
           title={t('home.header.language.title')}
           className='rightSide__select rightSide__select--languages'
-          defaultValue='en-US'
+          defaultValue={checkCurrentLanguage(i18n.language)}
+          onChange={async e => await i18n.changeLanguage(e.target.value)}
         >
-          <option value='en-US'>{t('home.header.language.english')}</option>
-          <option value='es-ES'>{t('home.header.language.portuguese')}</option>
-          <option value='pt-PT'>{t('home.header.language.spanish')}</option>
+          <option value='en'>{t('home.header.language.english')}</option>
+          <option value='pt'>{t('home.header.language.portuguese')}</option>
+          <option value='es'>{t('home.header.language.spanish')}</option>
         </select>
       </div>
     </Wrapper>
