@@ -46,6 +46,10 @@ export default [
       'capitalized-comments': ['error'],
       'default-case': 'error',
       'no-empty-function': 'error',
+      'unicorn/consistent-function-scoping': [
+        'error',
+        { checkArrowFunctions: false }
+      ],
 
       'unicorn/prevent-abbreviations': 'off',
       'unicorn/no-null': 'off',
