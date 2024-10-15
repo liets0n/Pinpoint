@@ -14,6 +14,10 @@ const Header = () => {
       return 'pt'
     }
 
+    if (value.includes('es')) {
+      return 'es'
+    }
+
     return ''
   }
 
