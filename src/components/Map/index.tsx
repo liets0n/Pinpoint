@@ -1,4 +1,5 @@
 import * as L from 'leaflet'
+import { useTranslation } from 'react-i18next'
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 
 const ZOOM = 12
@@ -12,6 +13,8 @@ type Props = {
 }
 
 const Map = ({ lat, lng, currentIpAddress }: Props) => {
+  const { t } = useTranslation()
+
   const coordinates =
     lat !== null && lng !== null ? [lat, lng] : [4852.6, 12_323.6]
 
@@ -32,8 +35,8 @@ const Map = ({ lat, lng, currentIpAddress }: Props) => {
       <Marker position={coordinates as L.LatLngExpression}>
         <Popup>
           {lat !== null && lng !== null
-            ? `The IP address ${currentIpAddress} is registered in this area.`
-            : "It was not possible to obtain the approximate coordinates of this IP address, so let's take a trip around Point Nemo."}
+            ? t('home.map.marker.default', { ip: currentIpAddress })
+            : t('home.map.marker.fallback')}
         </Popup>
       </Marker>
     </MapContainer>

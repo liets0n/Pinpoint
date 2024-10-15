@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
+import { useTranslation } from 'react-i18next'
 
 import { API } from './../../services'
 import { Header } from './../../layout'
@@ -8,6 +9,8 @@ import { Window, IpSearchInput, DataDisplayList, Map } from './../../components'
 
 const Home = () => {
   const [ipAddress, setIpAddress] = useState('0.0.0.0')
+
+  const { t } = useTranslation()
 
   const { data, isError, isLoading } = useQuery({
     queryKey: ['ipData', ipAddress],
@@ -25,12 +28,12 @@ const Home = () => {
     setIpAddress(newIpAddress)
   }
 
-  if (isError && !isLoading) {
-    return <h1>Error</h1>
+  if (data === undefined || isLoading) {
+    return <h1>{t('home.loading.text')}</h1>
   }
 
-  if (data === undefined || isLoading) {
-    return <h1>Loading...</h1>
+  if (isError && !isLoading) {
+    return <h1>{t('home.error.text')}</h1>
   }
 
   return (
@@ -39,7 +42,7 @@ const Home = () => {
 
       <Container>
         <div className='leftSide'>
-          <Window windowTitle='IP_DATA'>
+          <Window windowTitle={t('home.window.title.data')}>
             <DataDisplayList data={data} />
           </Window>
 
@@ -49,7 +52,7 @@ const Home = () => {
           />
         </div>
 
-        <Window windowTitle='MAP'>
+        <Window windowTitle={t('home.window.title.map')}>
           <Map
             lat={data.latitude}
             lng={data.longitude}

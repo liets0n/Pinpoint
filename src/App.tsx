@@ -7,6 +7,8 @@ import { Home } from './pages'
 import { Default } from './styles/theme'
 import { GlobalStyle } from './styles/global'
 
+import './libs/i18n'
+
 function App() {
   const [queryClient] = useState(() => new QueryClient())
 

@@ -43,12 +43,16 @@ export default [
       'no-template-curly-in-string': 'error',
       'block-scoped-var': 'error',
       'camelcase': 'error',
-      'capitalized-comments': ['error'],
       'default-case': 'error',
       'no-empty-function': 'error',
+      'unicorn/consistent-function-scoping': [
+        'error',
+        { checkArrowFunctions: false }
+      ],
 
       'unicorn/prevent-abbreviations': 'off',
-      'unicorn/no-null': 'off'
+      'unicorn/no-null': 'off',
+      'unicorn/prefer-export-from': 'off'
     }
   }
 ]
