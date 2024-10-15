@@ -5,7 +5,7 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 import translations from './../locales'
 
 const i18nConfig = {
-  supportedLngs: ['en', 'pt'],
+  supportedLngs: ['en', 'pt', 'es'],
   resources: translations,
   fallbackLng: 'en',
   defaultNS: 'translations',
