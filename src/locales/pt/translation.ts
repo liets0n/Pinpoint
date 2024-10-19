@@ -8,7 +8,8 @@ export default {
         theme: {
           title: 'Alterar o tema actual da página.',
           light: 'Claro',
-          dark: 'Escuro'
+          dark: 'Escuro',
+          system: 'Obter do sistema'
         },
         language: {
           title: 'Alterar o idioma actual da página.',
