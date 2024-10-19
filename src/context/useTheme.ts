@@ -1,11 +1,17 @@
 import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
 
 type State = {
   currentTheme: string
   changeCurrentTheme: (theme: string) => void
 }
 
-export const useTheme = create<State>()(set => ({
-  currentTheme: 'light',
-  changeCurrentTheme: theme => set({ currentTheme: theme })
-}))
+export const useTheme = create<State>()(
+  persist(
+    set => ({
+      currentTheme: 'light',
+      changeCurrentTheme: theme => set({ currentTheme: theme })
+    }),
+    { name: '@pinpoint/theme', version: 1 }
+  )
+)
