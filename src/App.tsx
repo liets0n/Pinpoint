@@ -13,9 +13,25 @@ function App() {
   const currentTheme = useTheme(state => state.currentTheme)
   const [queryClient] = useState(() => new QueryClient())
 
+  const systemTheme = globalThis.matchMedia(
+    '(prefers-color-scheme: light)'
+  ).matches
+
+  const checkTheme = () => {
+    if (currentTheme === 'light') {
+      return Default
+    }
+
+    if (currentTheme === 'dark') {
+      return DarkTheme
+    }
+
+    return systemTheme ? Default : DarkTheme
+  }
+
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider theme={currentTheme === 'light' ? Default : DarkTheme}>
+      <ThemeProvider theme={checkTheme()}>
         <Home />
         <GlobalStyle />
       </ThemeProvider>

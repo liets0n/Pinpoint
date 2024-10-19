@@ -41,6 +41,7 @@ const Header = () => {
         >
           <option value='light'>{t('home.header.theme.light')}</option>
           <option value='dark'>{t('home.header.theme.dark')}</option>
+          <option value='system'>{t('home.header.theme.system')}</option>
         </select>
 
         <select

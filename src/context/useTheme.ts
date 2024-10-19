@@ -9,7 +9,7 @@ type State = {
 export const useTheme = create<State>()(
   persist(
     set => ({
-      currentTheme: 'light',
+      currentTheme: 'system',
       changeCurrentTheme: theme => set({ currentTheme: theme })
     }),
     { name: '@pinpoint/theme', version: 1 }
