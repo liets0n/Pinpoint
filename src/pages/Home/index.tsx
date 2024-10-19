@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import { useQuery } from '@tanstack/react-query'
 import { useTranslation } from 'react-i18next'
+import { useQuery } from '@tanstack/react-query'
 
 import { API } from './../../services'
-import { Header } from './../../layout'
 import { Wrapper, Container } from './styles'
+import { Header, Error } from './../../layout'
 import { Window, IpSearchInput, DataDisplayList, Map } from './../../components'
 
 const Home = () => {
@@ -28,12 +28,12 @@ const Home = () => {
     setIpAddress(newIpAddress)
   }
 
-  if (data === undefined || isLoading) {
-    return <h1>{t('home.loading.text')}</h1>
+  if (isError && !isLoading) {
+    return <Error ipAddress={ipAddress} />
   }
 
-  if (isError && !isLoading) {
-    return <h1>{t('home.error.text')}</h1>
+  if (data === undefined || isLoading) {
+    return <h1>{t('home.loading.text')}</h1>
   }
 
   return (
