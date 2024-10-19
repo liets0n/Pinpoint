@@ -8,14 +8,14 @@ import { Header, Error } from './../../layout'
 import { Window, IpSearchInput, DataDisplayList, Map } from './../../components'
 
 const Home = () => {
-  const [ipAddress, setIpAddress] = useState('0.0.0.0')
+  const [ipAddress, setIpAddress] = useState('127.0.0.1')
 
   const { t } = useTranslation()
 
   const { data, isError, isLoading } = useQuery({
     queryKey: ['ipData', ipAddress],
     queryFn: async () => {
-      const hasStateChanged = ipAddress === '0.0.0.0' ? '' : `/${ipAddress}`
+      const hasStateChanged = ipAddress === '127.0.0.1' ? '' : `/${ipAddress}`
       const { data } = await API.get(
         `${hasStateChanged}?api-key=${import.meta.env.VITE_IPDATA_API_KEY}`
       )
