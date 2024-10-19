@@ -22,7 +22,9 @@ export default {
         text: 'Loading...'
       },
       error: {
-        text: 'An error occurred while retrieving the IP data.'
+        title: 'Error',
+        text: 'There was a problem obtaining data for IP {{ip}}. Please try refreshing the page.',
+        btn: 'Refresh the page'
       },
       dataDisplayList: {
         ipv4: 'IPv4:',
