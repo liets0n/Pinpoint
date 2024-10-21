@@ -4,7 +4,7 @@ import { useQuery } from '@tanstack/react-query'
 
 import { API } from './../../services'
 import { Wrapper, Container } from './styles'
-import { Header, Error } from './../../layout'
+import { Header, Error, Loading } from './../../layout'
 import { Window, IpSearchInput, DataDisplayList, Map } from './../../components'
 
 const Home = () => {
@@ -33,7 +33,7 @@ const Home = () => {
   }
 
   if (data === undefined || isLoading) {
-    return <h1>{t('home.loading.text')}</h1>
+    return <Loading />
   }
 
   return (
