@@ -1,11 +1,11 @@
 <img src="https://img.shields.io/badge/Version-1.0.0-brightgreen" alt="version" />&nbsp;
-<img src="https://img.shields.io/github/last-commit/li3tson/Pinpoint" alt="last-communit" />&nbsp;
-<img src="https://img.shields.io/github/issues/li3tson/Pinpoint" alt="issues" />&nbsp;
+<img src="https://img.shields.io/github/last-commit/liets0n/Pinpoint" alt="last-communit" />&nbsp;
+<img src="https://img.shields.io/github/issues/liets0n/Pinpoint" alt="issues" />&nbsp;
 <img src="https://img.shields.io/website?url=https%3A%2F%2Fpinpointip.vercel.app%2F" at="Website" />
 
 ## :rocket: Getting Started
 
-`Pinpoint` is an IP address geolocator integrated with a map. Its main functionality is to allow the user to search and obtain information (Internet Service Provider, Geographical Data) from a given IP address, as well as allowing the user to consult this data from their own IP address. Currently, there is support for light and dark mode and support for several languages, such as: English, Portuguese and Spanish. To see a preview of the project click [here](https://raw.githubusercontent.com/li3tson/Pinpoint/main/public/Preview.png).
+`Pinpoint` is an IP address geolocator integrated with a map. Its main functionality is to allow the user to search and obtain information (Internet Service Provider, Geographical Data) from a given IP address, as well as allowing the user to consult this data from their own IP address. Currently, there is support for light and dark mode and support for several languages, such as: English, Portuguese and Spanish. To see a preview of the project click [here](https://raw.githubusercontent.com/liets0n/Pinpoint/main/public/Preview.png).
 
 `Pinpoint` was initially designed for a more technical target audience, people who are aware of what an IP address is and what it is for.
 
