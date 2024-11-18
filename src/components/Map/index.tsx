@@ -23,6 +23,7 @@ const Map = ({ lat, lng, currentIpAddress }: Props) => {
       center={coordinates as L.LatLngExpression}
       zoom={ZOOM}
       style={{ width: '100%', height: '100%' }}
+      zoomControl={false}
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

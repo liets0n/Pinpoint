@@ -46,7 +46,8 @@ export default {
       },
       ipSearchInput: {
         ipErrorText: '¡Por favor, introduce una dirección IP válida!',
-        btnTitle: 'Buscar'
+        btnTitle: 'Buscar',
+        placeholder: 'Buscar por dirección IP, Ej: 203.0.113.1'
       },
       map: {
         marker: {
