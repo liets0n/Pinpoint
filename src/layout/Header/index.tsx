@@ -1,12 +1,11 @@
 import { useTranslation } from 'react-i18next'
 
 import { Wrapper } from './styles'
-import { useTheme } from './../../context'
+import { useTheme } from '../../stores'
 
 const Header = () => {
   const { t, i18n } = useTranslation()
-  const currentTheme = useTheme(state => state.currentTheme)
-  const changeCurrentTheme = useTheme(state => state.changeCurrentTheme)
+  const { state: theme, setState: changeTheme } = useTheme()
 
   const checkCurrentLanguage = (value: string) => {
     if (value.includes('en')) {
@@ -36,8 +35,8 @@ const Header = () => {
           name='theme'
           title={t('home.header.theme.title')}
           className='rightSide__select rightSide__select--theme'
-          defaultValue={currentTheme}
-          onChange={e => changeCurrentTheme(e.target.value)}
+          defaultValue={theme}
+          onChange={e => changeTheme(e.target.value)}
         >
           <option value='light'>{t('home.header.theme.light')}</option>
           <option value='dark'>{t('home.header.theme.dark')}</option>

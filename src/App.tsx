@@ -4,14 +4,14 @@ import { Analytics } from '@vercel/analytics/react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 import { Home } from './pages'
-import { useTheme } from './context'
+import { useTheme } from './stores'
 import { GlobalStyle } from './styles/global'
 import { Default, DarkTheme } from './styles/theme'
 
 import './libs/i18n'
 
 function App() {
-  const currentTheme = useTheme(state => state.currentTheme)
+  const { state: theme } = useTheme()
   const [queryClient] = useState(() => new QueryClient())
 
   const systemTheme = globalThis.matchMedia(
@@ -19,11 +19,11 @@ function App() {
   ).matches
 
   const checkTheme = () => {
-    if (currentTheme === 'light') {
+    if (theme === 'light') {
       return Default
     }
 
-    if (currentTheme === 'dark') {
+    if (theme === 'dark') {
       return DarkTheme
     }
 
