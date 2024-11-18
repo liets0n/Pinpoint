@@ -5,14 +5,15 @@ Hey, there :wave:! I'm really excited to see that someone is interested in contr
 
 ## :man_technologist: Repo Setup
 
-To develop locally, fork the Pinpoint repository and clone it in your local machine. The package manager used to install and link dependencies must be [pnpm](https://pnpm.io/).
+To run the project in your local environment, follow these steps:
 
-> :warning: **Warning:** Before running the project make sure to add your IPDATA API key to the .env file (.env.example).
+1. Fork the repository.
+2. Clone the repository to your local machine.
+3. Run `pnpm i` in the project directory to install the required dependencies.
+4. Run `pnpm run dev` to get the project started.
+5. Open [http://localhost:5173](http://localhost:5173) (or the address shown in your console) in your web browser to view the app.
 
-- Clone the repository to your local machine.
-- Run `pnpm i` in the project directory to install the required dependencies.
-- Run `pnpm run dev` to get the project started.
-- Open [http://localhost:5173](http://localhost:5173) (or the address shown in your console) in your web browser to view the app.
+**Note:** The node package used in this project is `PNPM`, to avoid possible errors I advise you to avoid using yarn or npm. Before running the project make sure to add your ipdata api key to the .env file.
 
 ## :file_folder: Folder structure
 
