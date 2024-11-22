@@ -2,7 +2,7 @@ import * as L from 'leaflet'
 import { useTranslation } from 'react-i18next'
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 
-const ZOOM = 12
+const ZOOM = 11
 const MIN_ZOOM = 1
 const MAX_ZOOM = 17
 
