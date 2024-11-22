@@ -23,7 +23,7 @@ export default {
       },
       error: {
         title: 'Erro',
-        text: 'Houve algum problema ao obter os dados do IP {{ip}}. Por favor, tente actualizar a página.',
+        text: 'Não foi possível carregar os dados no momento. Tente actualizar a página.',
         btn: 'Actualizar a página'
       },
       dataDisplayList: {

@@ -2,11 +2,7 @@ import { useTranslation } from 'react-i18next'
 
 import { Wrapper } from './styles'
 
-type Props = {
-  ipAddress: string
-}
-
-function Error({ ipAddress }: Props) {
+function Error() {
   const { t } = useTranslation()
 
   return (
@@ -23,9 +19,7 @@ function Error({ ipAddress }: Props) {
         </div>
 
         <div className='content'>
-          <h1 className='content__text'>
-            {t('home.error.text', { ip: ipAddress })}
-          </h1>
+          <h1 className='content__text'>{t('home.error.text')}</h1>
         </div>
       </div>
 

@@ -33,7 +33,7 @@ const Home = () => {
   }
 
   if (isError && !isLoading) {
-    return <Error ipAddress={ipAddress} />
+    return <Error />
   }
 
   if (data === undefined || isLoading) {
