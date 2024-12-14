@@ -4,37 +4,65 @@ import { useTranslation } from 'react-i18next'
 import { Wrapper } from './styles'
 import { textFormatter } from '../../utils'
 
+type Language = {
+  name: string
+  native: string
+  code: string
+}
+
+type Currency = {
+  name: string
+  code: string
+  symbol: string
+  native: string
+  plural: string
+}
+
+type TimeZone = {
+  name: string
+  abbr: string
+  offset: string
+  is_dst: boolean
+  current_time: string
+}
+
+type Threat = {
+  is_tor: boolean
+  is_icloud_relay: boolean
+  is_proxy: boolean
+  is_datacenter: boolean
+  is_anonymous: boolean
+  is_known_attacker: boolean
+  is_known_abuser: boolean
+  is_threat: boolean
+  is_bogon: boolean
+  blocklists: any[]
+}
+
 type Props = {
   data: {
-    time_zone: {
-      current_time: any
-    }
-    languages: {
-      code: string
-      name: string
-    }[]
-    ip: string | number | boolean
-    city: string | number | boolean
-    region: string | number | boolean
+    ip: string
+    is_eu: boolean
+    city: string
+    region: string
+    region_code: string
+    region_type: string
     country_name: string
+    country_code: string
+    continent_name: string
+    continent_code: string
+    latitude: number
+    longitude: number
+    postal: string
+    calling_code: string
+    flag: string
     emoji_flag: string
-    continent_name: string | number | boolean
-    latitude: string | number | boolean
-    longitude: string | number | boolean
-    currency: {
-      name: string
-      code: string
-    }
-    calling_code: string | number | boolean
-    asn: {
-      name: string | number | boolean
-      domain: string | number | boolean
-    }
-    threat: {
-      is_tor: string | number | boolean
-      is_proxy: string | number | boolean
-      is_datacenter: string | number | boolean
-    }
+    emoji_unicode: string
+    languages: Language[]
+    currency: Currency
+    time_zone: TimeZone
+    threat: Threat
+    count: string
   }
 }
 
@@ -162,26 +190,6 @@ const DataDisplayList = ({ data }: Props) => {
             </span>
             &nbsp;
             <span>{textFormatter(`+${data.calling_code}`)}</span>
-          </p>
-        </li>
-
-        <li className='list__item'>
-          <p className='item__text' title={String(data.asn.name)}>
-            <span className='text--emphasis'>
-              {t('home.dataDisplayList.asn')}
-            </span>
-            &nbsp;
-            <span>{textFormatter(data.asn.name)}</span>
-          </p>
-        </li>
-
-        <li className='list__item'>
-          <p className='item__text'>
-            <span className='text--emphasis'>
-              {t('home.dataDisplayList.asnDomain')}
-            </span>
-            &nbsp;
-            <span>{textFormatter(data.asn.domain)}</span>
           </p>
         </li>
 
