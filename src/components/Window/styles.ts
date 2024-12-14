@@ -44,4 +44,14 @@ export const Wrapper = Styled.section`
     height: 90%;
     overflow: scroll;
   }
+
+  @media (width <= 1050px) {
+    width: 100%;
+    height: 31rem;
+  }
+
+  @media (width <= 828px) {
+    height: 20rem;
+    box-shadow: 0.2rem 0.2rem 0 ${({ theme }) => theme.colors.gray[900]};
+  }
 `
