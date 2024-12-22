@@ -2,7 +2,8 @@
 ![React](https://img.shields.io/badge/react-black.svg?style=for-the-badge&logo=react&logoColor=white)
 ![PNPM](https://img.shields.io/badge/pnpm-black.svg?style=for-the-badge&logo=pnpm&logoColor=white)
 ![Vercel](https://img.shields.io/badge/vercel-black.svg?style=for-the-badge&logo=vercel&logoColor=white)
-[![Licence](https://img.shields.io/github/license/liets0n/Pinpoint?style=for-the-badge)](./LICENSE)
+[![Licence](https://img.shields.io/github/license/liets0n/Pinpoint?style=for-the-badge&color=black)](./LICENSE)
+[![Version](https://img.shields.io/badge/Version-1.1.1-green?style=for-the-badge&color=black)]()
 
 ## :rocket: Getting Started
 
