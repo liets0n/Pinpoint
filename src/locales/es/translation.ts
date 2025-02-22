@@ -9,7 +9,7 @@ export default {
           title: 'Cambiar el tema actual de la página',
           light: 'Claro',
           dark: 'Oscuro',
-          system: 'Obtener del sistema'
+          system: 'Sistema'
         },
         language: {
           title: 'Cambiar el idioma actual de la página',
