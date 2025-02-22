@@ -43,7 +43,4 @@ If you are interested in contributing to the growth of the project, consider rea
 
 ## :copyright: License
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/)
-
-This webpage is distributed under a Creative Commons license. You can review the full license agreement at the following link: [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
-
+This project is distributed under a MIT license. You can review the full license agreement at the following link: [MIT License](https://opensource.org/license/mit).
