@@ -7,7 +7,7 @@
 
 ## :rocket: Getting Started
 
-Pinpoint is a powerful and intuitive tool for IP address geolocation. Designed to provide accuracy and a user-friendly experience, this project enables users to discover the exact location where an IP address is registered, as well as access detailed information about the IP. To see a preview of the project click [here](https://raw.githubusercontent.com/liets0n/Pinpoint/main/public/Preview.png).
+Pinpoint is an online tool that allows you to identify and track the approximate geographic location of an IP address, as well as provide information about the internet service provider, language spoken in the country where it is located, currency, area code, and other details. Designed to deliver accuracy and a user-friendly experience. To see a preview of the project click [here](https://raw.githubusercontent.com/liets0n/Pinpoint/main/public/Preview.png).
 
 `Pinpoint` was initially designed for a more technical target audience, people who are aware of what an IP address is and what it is for.
 
