@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useTranslation } from 'react-i18next'
 
+import { textFormatter } from './../../utils'
 import { Wrapper } from './styles'
-import { textFormatter } from '../../utils'
 
 type Language = {
   name: string
@@ -66,7 +66,7 @@ type Props = {
   }
 }
 
-const DataDisplayList = ({ data }: Props) => {
+const Info = ({ data }: Props) => {
   const { t } = useTranslation()
   const currentTime = new Date(String(data.time_zone.current_time))
 
@@ -227,4 +227,4 @@ const DataDisplayList = ({ data }: Props) => {
   )
 }
 
-export default DataDisplayList
+export default Info

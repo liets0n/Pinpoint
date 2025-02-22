@@ -5,7 +5,7 @@ import { useQuery } from '@tanstack/react-query'
 import { API } from './../../services'
 import { Wrapper, Container } from './styles'
 import { Header, Error, Loading } from './../../layout'
-import { Window, IpSearchInput, DataDisplayList, Map } from './../../components'
+import { Window, IpSearchInput, Info, Map } from './../../components'
 
 const Home = () => {
   const { t } = useTranslation()
@@ -47,7 +47,7 @@ const Home = () => {
       <Container>
         <div className='leftSide'>
           <Window windowTitle={t('home.window.title.data')}>
-            <DataDisplayList data={data} />
+            <Info data={data} />
           </Window>
 
           <IpSearchInput
