@@ -25,14 +25,15 @@ export const Wrapper = Styled.header`
   .rightSide {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.3rem;
 
     .rightSide__select {
       width: 8rem;
       height: 3rem;
       font-size: 1rem;
-      border: 2px solid ${({ theme }) => theme.colors.gray[900]};
       padding: 0.5rem;
+      border: 2px solid ${({ theme }) => theme.colors.gray[900]};
+      border-radius: 6px;
       box-shadow: 0.3rem 0.3rem 0 ${({ theme }) => theme.colors.gray[900]};
       color: ${({ theme }) => theme.colors.gray[900]};
       background-color: ${({ theme }) => theme.colors.gray[50]};

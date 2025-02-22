@@ -28,8 +28,8 @@ export const Container = Styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  margin-top: 4rem;
-  gap: 1rem;
+  margin-top: 3.8rem;
+  gap: 1.4rem;
 
 
   @media (width <= 1050px) {

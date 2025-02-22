@@ -11,6 +11,7 @@ export const Wrapper = Styled.section`
     width: 28rem;
     height: 10rem;
     border: 2px solid ${({ theme }) => theme.colors.gray[900]};
+    border-radius: 6px;
     box-shadow: 0.4rem 0.4rem 0 ${({ theme }) => theme.colors.gray[900]};
 
     .header {
@@ -51,7 +52,7 @@ export const Wrapper = Styled.section`
       align-items: center;
       justify-content: center;
       padding: 1rem;
-      margin-top: 1rem;
+      margin-top: 1.4rem;
 
       .content__text {
         font-size: 2rem;

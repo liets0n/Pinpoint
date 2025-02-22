@@ -1,7 +1,7 @@
 import Styled from 'styled-components'
 
 export const Wrapper = Styled.div`
-  margin-top: 1rem;
+  margin-top: 1.4rem;
 
   form {
     width: 30rem;
@@ -11,6 +11,7 @@ export const Wrapper = Styled.div`
     padding-bottom: 0.5rem;
     color: ${({ theme }) => theme.colors.gray[900]};
     border: 2px solid ${({ theme }) => theme.colors.gray[900]};
+    border-radius: 6px;
     box-shadow: 0.3rem 0.3rem 0 ${({ theme }) => theme.colors.gray[900]};
 
     .searchField {
