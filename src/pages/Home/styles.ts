@@ -1,12 +1,9 @@
 import Styled from 'styled-components'
 
 export const Wrapper = Styled.main`
-  position: absolute;
-  top: 50%;
-  left: 50%;
   width: max-content;
   height: max-content;
-  transform: translate(-50%, -50%);
+  margin: 4rem auto;
 
   @media (width <= 1050px) {
     position: relative;
