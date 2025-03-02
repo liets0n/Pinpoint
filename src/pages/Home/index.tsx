@@ -1,69 +1,33 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useQuery } from '@tanstack/react-query'
 
-import { API } from './../../services'
-import { Wrapper, Container } from './styles'
-import { Header, Error, Loading } from './../../layout'
-import { Window, IpSearchInput, DataDisplayList, Map } from './../../components'
+import { Information, Input, Map } from '@components'
+import { Error, Header, Loading } from '@layouts'
+import { Service } from '@services'
+import { Wrapper } from './styles'
 
 const Home = () => {
   const { t } = useTranslation()
 
-  const [ipAddress, setIpAddress] = useState(
-    t('home.ipSearchInput.placeholder')
-  )
+  const [ipAddress, setIpAddress] = useState(t('home.input.placeholder'))
 
-  const { data, isError, isLoading } = useQuery({
-    queryKey: ['ipData', ipAddress],
-    queryFn: async () => {
-      const hasStateChanged =
-        ipAddress === t('home.ipSearchInput.placeholder') ? '' : `/${ipAddress}`
+  const { data, isError, isLoading } = Service(ipAddress)
 
-      const { data } = await API.get(
-        `${hasStateChanged}?api-key=${import.meta.env.VITE_IPDATA_API_KEY}`
-      )
-
-      return data
-    }
-  })
-
-  const updateIpAddress = (newIpAddress: string): void => {
-    setIpAddress(newIpAddress)
-  }
-
-  if (isError && !isLoading) {
-    return <Error />
-  }
-
-  if (data === undefined || isLoading) {
-    return <Loading />
-  }
+  if (isError && !isLoading) return <Error />
+  if (!data || isLoading) return <Loading />
 
   return (
     <Wrapper>
       <Header />
 
-      <Container>
-        <div className='leftSide'>
-          <Window windowTitle={t('home.window.title.data')}>
-            <DataDisplayList data={data} />
-          </Window>
+      <Information data={data} />
 
-          <IpSearchInput
-            getCurrentIpAddress={ipAddress}
-            updateIpAddress={updateIpAddress}
-          />
-        </div>
+      <Map
+        coordinates={{ lat: data.latitude, lng: data.longitude }}
+        currentIpAddress={data.ip}
+      />
 
-        <Window windowTitle={t('home.window.title.map')}>
-          <Map
-            lat={data.latitude}
-            lng={data.longitude}
-            currentIpAddress={data.ip}
-          />
-        </Window>
-      </Container>
+      <Input getIp={ipAddress} setIp={setIpAddress} />
     </Wrapper>
   )
 }

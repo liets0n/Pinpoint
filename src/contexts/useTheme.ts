@@ -12,6 +12,6 @@ export const useTheme = create<State>()(
       currentTheme: 'system',
       changeCurrentTheme: theme => set({ currentTheme: theme })
     }),
-    { name: '@pinpoint/theme', version: 1 }
+    { name: '@pinpoint/theme', version: 2 }
   )
 )

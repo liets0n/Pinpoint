@@ -4,12 +4,12 @@ export default {
       header: {
         title: 'Pinpoint',
         subtitle:
-          'Online tool that allows you to track and identify the origin of an IP address.',
+          'Easily identify the origin of an IP address and get more information about its location.',
         theme: {
           title: 'Change the current page theme',
           light: 'Light',
           dark: 'Dark',
-          system: 'Get from the system'
+          system: 'Auto'
         },
         language: {
           title: 'Change the current page language',
@@ -44,7 +44,7 @@ export default {
         proxy: 'Proxy:',
         dataCenter: 'Data Center:'
       },
-      ipSearchInput: {
+      input: {
         ipErrorText: 'Please enter a valid IP address!',
         btnTitle: 'Search',
         placeholder: 'Search by IP address, Ex: 203.0.113.1'
@@ -58,8 +58,8 @@ export default {
       },
       window: {
         title: {
-          data: 'IP DATA',
-          map: 'MAP'
+          information: 'Information',
+          map: 'Map'
         }
       }
     }

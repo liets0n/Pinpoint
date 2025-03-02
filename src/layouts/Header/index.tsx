@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 
+import { useTheme } from '@contexts'
 import { Wrapper } from './styles'
-import { useTheme } from './../../context'
 
 const Header = () => {
   const { t, i18n } = useTranslation()
@@ -9,19 +9,8 @@ const Header = () => {
   const changeCurrentTheme = useTheme(state => state.changeCurrentTheme)
 
   const checkCurrentLanguage = (value: string) => {
-    if (value.includes('en')) {
-      return 'en'
-    }
-
-    if (value.includes('pt')) {
-      return 'pt'
-    }
-
-    if (value.includes('es')) {
-      return 'es'
-    }
-
-    return ''
+    const languages = ['en', 'pt', 'es']
+    return languages.find(lang => value.includes(lang)) || 'en'
   }
 
   return (
@@ -34,9 +23,9 @@ const Header = () => {
       <div className='rightSide'>
         <select
           name='theme'
-          title={t('home.header.theme.title')}
-          className='rightSide__select rightSide__select--theme'
           defaultValue={currentTheme}
+          aria-label={t('home.header.theme.title')}
+          className='rightSide__select rightSide__select--theme'
           onChange={e => changeCurrentTheme(e.target.value)}
         >
           <option value='light'>{t('home.header.theme.light')}</option>
@@ -46,9 +35,9 @@ const Header = () => {
 
         <select
           name='language'
-          title={t('home.header.language.title')}
-          className='rightSide__select rightSide__select--languages'
           defaultValue={checkCurrentLanguage(i18n.language)}
+          aria-label={t('home.header.language.title')}
+          className='rightSide__select rightSide__select--languages'
           onChange={async e => await i18n.changeLanguage(e.target.value)}
         >
           <option value='en'>{t('home.header.language.english')}</option>

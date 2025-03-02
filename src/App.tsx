@@ -1,38 +1,31 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { Analytics } from '@vercel/analytics/react'
 import { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
-import { Analytics } from '@vercel/analytics/react'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
-import { Home } from './pages'
-import { useTheme } from './context'
-import { GlobalStyle } from './styles/global'
-import { Default, DarkTheme } from './styles/theme'
+import { useTheme } from '@contexts'
+import { Home } from '@pages'
+import { GlobalStyle } from '@styles/global'
+import { DarkTheme, LightTheme } from '@styles/theme'
 
 import './libs/i18n'
 
 function App() {
-  const currentTheme = useTheme(state => state.currentTheme)
+  const currentTheme = useTheme(state => state.currentTheme) as 'light' | 'dark'
   const [queryClient] = useState(() => new QueryClient())
 
   const systemTheme = globalThis.matchMedia(
     '(prefers-color-scheme: light)'
   ).matches
 
-  const checkTheme = () => {
-    if (currentTheme === 'light') {
-      return Default
-    }
-
-    if (currentTheme === 'dark') {
-      return DarkTheme
-    }
-
-    return systemTheme ? Default : DarkTheme
+  const checkTheme = (current: 'light' | 'dark', system: boolean) => {
+    const themes = { light: LightTheme, dark: DarkTheme }
+    return themes[current] ?? (system ? LightTheme : DarkTheme)
   }
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider theme={checkTheme()}>
+      <ThemeProvider theme={checkTheme(currentTheme, systemTheme)}>
         <Home />
         <GlobalStyle />
         <Analytics />

@@ -1,19 +1,20 @@
 import Styled from 'styled-components'
 
-export const Wrapper = Styled.div`
-  margin-top: 1rem;
+export const Wrapper = Styled.form`
+  grid-area: input;
 
-  form {
+  .container {
     width: 30rem;
-    height: 3.5rem;
+    height: 4rem;
     display: flex;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     color: ${({ theme }) => theme.colors.gray[900]};
     border: 2px solid ${({ theme }) => theme.colors.gray[900]};
+    border-radius: 6px;
     box-shadow: 0.3rem 0.3rem 0 ${({ theme }) => theme.colors.gray[900]};
 
-    .searchField {
+    .container__input {
       width: 85%;
       height: 100%;
       font-size: 1rem;
@@ -23,7 +24,7 @@ export const Wrapper = Styled.div`
       background-color: ${({ theme }) => theme.colors.gray[50]};
     }
 
-    .btn {
+    .container__btn {
       width: 15%;
       height: 100%;
       display: flex;
@@ -38,6 +39,28 @@ export const Wrapper = Styled.div`
         color: ${({ theme }) => theme.colors.gray[900]}
       }
     }
+
+    @media (width <= 1050px) {
+      width: 100%;
+    }
+
+    @media (width <= 828px) {
+      box-shadow: 0.2rem 0.2rem 0 ${({ theme }) => theme.colors.gray[900]};
+
+      .container__input {
+        font-size: 0.875rem;
+      }
+    }
+
+    @media (width <= 481px) {
+      .container__input {
+        font-size: 0.875rem;
+      }
+
+      .container__btn {
+        width: 25%;
+      }
+    }
   }
 `
 export const Warning = Styled.div`
@@ -49,5 +72,14 @@ export const Warning = Styled.div`
   margin-top: 1rem;
   color: ${({ theme }) => theme.colors.gray[900]};
   border: 2px solid ${({ theme }) => theme.colors.gray[900]};
-  box-shadow: 0.5rem 0.5rem 0 ${({ theme }) => theme.colors.gray[900]};
+  border-radius: 6px;
+  box-shadow: 0.3rem 0.3rem 0 ${({ theme }) => theme.colors.gray[900]};
+
+  .warning__text {
+    text-align: center;
+  }
+
+  @media (width <= 1050px) {
+    width: 100%;
+  }
 `

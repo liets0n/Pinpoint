@@ -1,9 +1,7 @@
-# Ignore artifacts:
+node_modules
 build
 coverage
-
+dist
 .DS_Store
 .gitignore
-
-# Ignore all HTML files:
 **/*.html

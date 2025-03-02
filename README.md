@@ -2,13 +2,12 @@
 ![React](https://img.shields.io/badge/react-black.svg?style=for-the-badge&logo=react&logoColor=white)
 ![PNPM](https://img.shields.io/badge/pnpm-black.svg?style=for-the-badge&logo=pnpm&logoColor=white)
 ![Vercel](https://img.shields.io/badge/vercel-black.svg?style=for-the-badge&logo=vercel&logoColor=white)
-[![Licence](https://img.shields.io/github/license/liets0n/Pinpoint?style=for-the-badge)](./LICENSE)
+[![Licence](https://img.shields.io/github/license/liets0n/Pinpoint?style=for-the-badge&color=black)](./LICENSE)
+[![Version](https://img.shields.io/badge/Version-2.0.0-green?style=for-the-badge&color=black)]()
 
 ## :rocket: Getting Started
 
-Pinpoint is a powerful and intuitive tool for IP address geolocation. Designed to provide accuracy and a user-friendly experience, this project enables users to discover the exact location where an IP address is registered, as well as access detailed information about the IP. To see a preview of the project click [here](https://raw.githubusercontent.com/liets0n/Pinpoint/main/public/Preview.png).
-
-`Pinpoint` was initially designed for a more technical target audience, people who are aware of what an IP address is and what it is for.
+Pinpoint is an online tool that allows you to identify and track the approximate geographic location of an IP address, as well as provide information about the internet service provider, language spoken in the country where it is located, currency, area code, and other details. Designed to deliver accuracy and a user-friendly experience. To see a preview of the project click [here](https://raw.githubusercontent.com/liets0n/Pinpoint/main/public/Preview.png).
 
 ## :bulb: Key Features
 `Accurate Geolocation:` View the location of any IP address directly on an interactive map.
@@ -44,7 +43,4 @@ If you are interested in contributing to the growth of the project, consider rea
 
 ## :copyright: License
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/)
-
-This webpage is distributed under a Creative Commons license. You can review the full license agreement at the following link: [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
-
+This project is distributed under a MIT license. You can review the full license agreement at the following link: [MIT License](https://opensource.org/license/mit).

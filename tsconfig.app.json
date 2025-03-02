@@ -18,7 +18,28 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Alias Paths */
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["*"],
+      "@components/*": ["src/components/*"],
+      "@components": ["src/components/index.ts"],
+      "@contexts/*": ["src/contexts/*"],
+      "@contexts": ["src/contexts/index.ts"],
+      "@layouts/*": ["src/layouts/*"],
+      "@layouts": ["src/layouts/index.ts"],
+      "@libs/*": ["src/libs/*"],
+      "@locales/*": ["src/locales/*"],
+      "@locales": ["src/locales/index.ts"],
+      "@pages/*": ["src/pages/*"],
+      "@pages": ["src/pages/index.ts"],
+      "@services/*": ["src/services/*"],
+      "@services": ["src/services/index.ts"],
+      "@styles/*": ["src/styles/*"],
+      "@utils/*": ["src/utils/*"],
+    }
   },
   "include": ["src"]
 }

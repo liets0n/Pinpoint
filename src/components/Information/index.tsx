@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useTranslation } from 'react-i18next'
 
-import { Wrapper } from './styles'
-import { textFormatter } from '../../utils'
+import { Window } from '@components'
+import { Container } from './styles'
 
 type Language = {
   name: string
@@ -36,6 +35,7 @@ type Threat = {
   is_known_abuser: boolean
   is_threat: boolean
   is_bogon: boolean
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   blocklists: any[]
 }
 
@@ -66,13 +66,34 @@ type Props = {
   }
 }
 
-const DataDisplayList = ({ data }: Props) => {
+const Information = ({ data }: Props) => {
   const { t } = useTranslation()
   const currentTime = new Date(String(data.time_zone.current_time))
 
+  function textFormatter(text: number | string | boolean) {
+    const formattedText = String(text)
+
+    const invalidValues = [
+      '',
+      'null',
+      'null null',
+      'Invalid Date',
+      'null (null)',
+      '+null'
+    ]
+
+    if (invalidValues.includes(formattedText)) return 'N/A'
+    if (text === true) return 'Yes'
+    if (text === false) return 'No'
+
+    return formattedText.length >= 40
+      ? `${formattedText.slice(0, 40)}...`
+      : formattedText
+  }
+
   return (
-    <Wrapper>
-      <ul className='list'>
+    <Window windowTitle={t('home.window.title.information')}>
+      <Container>
         <li className='list__item'>
           <p className='item__text'>
             <span className='text--emphasis'>
@@ -165,7 +186,7 @@ const DataDisplayList = ({ data }: Props) => {
               {textFormatter(
                 Array.isArray(data.languages) && data.languages.length > 0
                   ? `${data.languages[0].name} (${String(data.languages[0].code).toUpperCase()})`
-                  : '-'
+                  : 'N/A'
               )}
             </span>
           </p>
@@ -222,9 +243,9 @@ const DataDisplayList = ({ data }: Props) => {
             <span>{textFormatter(data.threat.is_datacenter)}</span>
           </p>
         </li>
-      </ul>
-    </Wrapper>
+      </Container>
+    </Window>
   )
 }
 
-export default DataDisplayList
+export default Information

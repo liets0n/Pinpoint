@@ -4,12 +4,12 @@ export default {
       header: {
         title: 'Pinpoint',
         subtitle:
-          'Ferramenta online que permite rastrear e identificar a origem de um endereço IP.',
+          'Identifique facilmente a origem de um endereço IP e obtenha mais informações sobre sua localização.',
         theme: {
           title: 'Alterar o tema actual da página.',
           light: 'Claro',
           dark: 'Escuro',
-          system: 'Obter do sistema'
+          system: 'Automático'
         },
         language: {
           title: 'Alterar o idioma actual da página.',
@@ -44,7 +44,7 @@ export default {
         proxy: 'Proxy:',
         dataCenter: 'Data Center:'
       },
-      ipSearchInput: {
+      input: {
         ipErrorText: 'Por favor, insira um endereço IP válido!',
         btnTitle: 'Pesquisar',
         placeholder: 'Pesquise por endereço IP, Ex: 203.0.113.1'
@@ -58,8 +58,8 @@ export default {
       },
       window: {
         title: {
-          data: 'DADOS DO IP',
-          map: 'MAPA'
+          information: 'Informações',
+          map: 'Mapa'
         }
       }
     }

@@ -1,30 +1,29 @@
-import { z } from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { MagnifyingGlass } from '@phosphor-icons/react'
 import { useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
-import { zodResolver } from '@hookform/resolvers/zod'
+import { z } from 'zod'
 
-import { MagnifyingGlass } from '@phosphor-icons/react'
-
-import i18next from './../../libs/i18n'
-import { Wrapper, Warning } from './styles'
+import i18next from '@libs/i18n'
+import { Warning, Wrapper } from './styles'
 
 const schemaValidation = z.object({
   search: z
     .string()
     .regex(
       /^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/,
-      i18next.t('home.ipSearchInput.ipErrorText')
+      i18next.t('home.input.ipErrorText')
     )
 })
 
 type SchemaType = z.infer<typeof schemaValidation>
 
 type Props = {
-  getCurrentIpAddress: string
-  updateIpAddress: (newIPAddress: string) => void
+  getIp: string
+  setIp: React.Dispatch<React.SetStateAction<string>>
 }
 
-const IpSearchInput = ({ getCurrentIpAddress, updateIpAddress }: Props) => {
+const Input = ({ getIp, setIp }: Props) => {
   const { t } = useTranslation()
 
   const {
@@ -34,28 +33,28 @@ const IpSearchInput = ({ getCurrentIpAddress, updateIpAddress }: Props) => {
   } = useForm<SchemaType>({ resolver: zodResolver(schemaValidation) })
 
   const handleSearchForIp = (data: SchemaType) => {
-    updateIpAddress(String(data.search))
+    setIp(String(data.search))
   }
 
   return (
-    <Wrapper>
-      <form onSubmit={handleSubmit(handleSearchForIp)}>
+    <Wrapper onSubmit={handleSubmit(handleSearchForIp)}>
+      <div className='container'>
         <input
           type='text'
           id='search'
-          placeholder={getCurrentIpAddress}
-          className='searchField'
+          placeholder={getIp}
+          className='container__input'
           {...register('search')}
         />
 
         <button
           type='submit'
-          className='btn'
-          title={t('home.ipSearchInput.btnTitle')}
+          className='container__btn'
+          aria-label={t('home.input.btnTitle')}
         >
           <MagnifyingGlass size={32} className='btn__icon' />
         </button>
-      </form>
+      </div>
 
       {errors.search != null && (
         <Warning>
@@ -66,4 +65,4 @@ const IpSearchInput = ({ getCurrentIpAddress, updateIpAddress }: Props) => {
   )
 }
 
-export default IpSearchInput
+export default Input
