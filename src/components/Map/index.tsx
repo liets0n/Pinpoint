@@ -4,7 +4,7 @@ import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 
 import { Window } from '@components'
 
-const ZOOM = 11
+const ZOOM = 7.49
 const MIN_ZOOM = 1
 const MAX_ZOOM = 17
 
