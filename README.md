@@ -5,7 +5,7 @@
 [![Licence](https://img.shields.io/github/license/liets0n/Pinpoint?style=for-the-badge&color=black)](./LICENSE)
 [![Version](https://img.shields.io/badge/Version-2.0.1-green?style=for-the-badge&color=black)]()
 
-## :rocket: Getting Started
+## :eyes: Overview
 
 Pinpoint is an online tool that allows you to identify and track the approximate geographic location of an IP address, as well as provide information about the internet service provider, language spoken in the country where it is located, currency, area code, and other details. Designed to deliver accuracy and a user-friendly experience. To see a preview of the project click [here](https://raw.githubusercontent.com/liets0n/Pinpoint/main/public/Preview.png).
 
