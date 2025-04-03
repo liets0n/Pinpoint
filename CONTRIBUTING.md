@@ -3,6 +3,9 @@
 
 Hey, there :wave:! I'm really excited to see that someone is interested in contributing to Pinpoint! Before submitting your contribution, please read the following guide.
 
+## :white_check_mark: Requirements
+Before running the project make sure to add your ipdata api key to the .env file.
+
 ## :man_technologist: Repo Setup
 
 To run the project in your local environment, follow these steps:
@@ -11,27 +14,25 @@ To run the project in your local environment, follow these steps:
 2. Clone the repository to your local machine.
 3. Run `pnpm i` in the project directory to install the required dependencies.
 4. Run `pnpm run dev` to get the project started.
-5. Open [http://localhost:5173](http://localhost:5173) (or the address shown in your console) in your web browser to view the app.
-
-**Note:** The node package used in this project is `PNPM`, to avoid possible errors I advise you to avoid using yarn or npm. Before running the project make sure to add your ipdata api key to the .env file.
+5. Open [http://localhost:5173](http://localhost:5173) (or the address shown in your console).
 
 ## :file_folder: Folder structure
 
 ```
 .
 ├── src
-|   ├── utils       # Contains all modules that provide generic utility functionality.
 |   ├── styles      # Contains all global styles of the application including color tokens etc...
 |   ├── services    # Contains all modules to retrieve data from external APIs, such as RESTful or GraphQL APIs.
 |   ├── pages       # Contains all Application pages (As this application is a single page application, there will only be one page).
 |   ├── locales     # contains all translations of page strings into different languages.
 |   ├── libs        # Contains all Modules and configuration of third-party libraries or created by me.
-|   ├── layout      # Contains all the components that define the structure and basic appearance of the page.
+|   ├── layouts      # Contains all the components that define the structure and basic appearance of the page.
 |   ├── contexts    # Contains all information will be shared globally.
 |   ├── components  # Contains all page components. 
 |   └── @types      # Contains all type definitions for third-party libraries or frameworks.
 |
 ├── public          # Contains all static files that will be served directly by the web server.
+├── cypress          # Contains the configuration, tests, and support files for Cypress.
 └── .husky          # Contains configuration files that define which Git hooks will be used and what scripts they should execute.
 ```
 
