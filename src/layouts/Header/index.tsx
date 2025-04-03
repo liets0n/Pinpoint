@@ -39,6 +39,7 @@ const Header = () => {
           aria-label={t('home.header.language.title')}
           className='rightSide__select rightSide__select--languages'
           onChange={async e => await i18n.changeLanguage(e.target.value)}
+          data-testid='page-language'
         >
           <option value='en'>{t('home.header.language.english')}</option>
           <option value='pt'>{t('home.header.language.portuguese')}</option>

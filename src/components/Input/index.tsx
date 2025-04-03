@@ -44,6 +44,7 @@ const Input = ({ getIp, setIp }: Props) => {
           id='search'
           placeholder={getIp}
           className='container__input'
+          data-testid='input'
           {...register('search')}
         />
 
@@ -51,13 +52,14 @@ const Input = ({ getIp, setIp }: Props) => {
           type='submit'
           className='container__btn'
           aria-label={t('home.input.btnTitle')}
+          data-testid='search-btn'
         >
           <MagnifyingGlass size={32} className='btn__icon' />
         </button>
       </div>
 
       {errors.search != null && (
-        <Warning>
+        <Warning data-testid='warning'>
           <p className='warning__text'>{errors.search?.message}</p>
         </Warning>
       )}

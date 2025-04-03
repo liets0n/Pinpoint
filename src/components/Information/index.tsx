@@ -94,7 +94,7 @@ const Information = ({ data }: Props) => {
   return (
     <Window windowTitle={t('home.window.title.information')}>
       <Container>
-        <li className='list__item'>
+        <li className='list__item' data-testid='ip'>
           <p className='item__text'>
             <span className='text--emphasis'>
               {t('home.dataDisplayList.ipv4')}
@@ -104,7 +104,7 @@ const Information = ({ data }: Props) => {
           </p>
         </li>
 
-        <li className='list__item'>
+        <li className='list__item' data-testid='city'>
           <p className='item__text'>
             <span className='text--emphasis'>
               {t('home.dataDisplayList.city')}
@@ -114,7 +114,7 @@ const Information = ({ data }: Props) => {
           </p>
         </li>
 
-        <li className='list__item'>
+        <li className='list__item' data-testid='state'>
           <p className='item__text'>
             <span className='text--emphasis'>
               {t('home.dataDisplayList.state')}
@@ -124,7 +124,7 @@ const Information = ({ data }: Props) => {
           </p>
         </li>
 
-        <li className='list__item'>
+        <li className='list__item' data-testid='country'>
           <p className='item__text'>
             <span className='text--emphasis'>
               {t('home.dataDisplayList.country')}
@@ -136,7 +136,7 @@ const Information = ({ data }: Props) => {
           </p>
         </li>
 
-        <li className='list__item'>
+        <li className='list__item' data-testid='continent'>
           <p className='item__text'>
             <span className='text--emphasis'>
               {t('home.dataDisplayList.continent')}
@@ -146,7 +146,7 @@ const Information = ({ data }: Props) => {
           </p>
         </li>
 
-        <li className='list__item'>
+        <li className='list__item' data-testid='time'>
           <p className='item__text'>
             <span className='text--emphasis'>
               {t('home.dataDisplayList.currentTime')}
@@ -156,7 +156,7 @@ const Information = ({ data }: Props) => {
           </p>
         </li>
 
-        <li className='list__item'>
+        <li className='list__item' data-testid='latitude'>
           <p className='item__text'>
             <span className='text--emphasis'>
               {t('home.dataDisplayList.latitude')}
@@ -166,7 +166,7 @@ const Information = ({ data }: Props) => {
           </p>
         </li>
 
-        <li className='list__item'>
+        <li className='list__item' data-testid='longitude'>
           <p className='item__text'>
             <span className='text--emphasis'>
               {t('home.dataDisplayList.longitude')}
@@ -176,7 +176,7 @@ const Information = ({ data }: Props) => {
           </p>
         </li>
 
-        <li className='list__item'>
+        <li className='list__item' data-testid='language'>
           <p className='item__text'>
             <span className='text--emphasis'>
               {t('home.dataDisplayList.idiom')}
@@ -192,7 +192,7 @@ const Information = ({ data }: Props) => {
           </p>
         </li>
 
-        <li className='list__item'>
+        <li className='list__item' data-testid='currency'>
           <p className='item__text'>
             <span className='text--emphasis'>
               {t('home.dataDisplayList.currency')}
@@ -204,7 +204,7 @@ const Information = ({ data }: Props) => {
           </p>
         </li>
 
-        <li className='list__item'>
+        <li className='list__item' data-testid='ddd'>
           <p className='item__text'>
             <span className='text--emphasis'>
               {t('home.dataDisplayList.ddd')}
@@ -214,7 +214,7 @@ const Information = ({ data }: Props) => {
           </p>
         </li>
 
-        <li className='list__item'>
+        <li className='list__item' data-testid='is_tor'>
           <p className='item__text'>
             <span className='text--emphasis'>
               {t('home.dataDisplayList.tor')}
@@ -224,7 +224,7 @@ const Information = ({ data }: Props) => {
           </p>
         </li>
 
-        <li className='list__item'>
+        <li className='list__item' data-testid='is_proxy'>
           <p className='item__text'>
             <span className='text--emphasis'>
               {t('home.dataDisplayList.proxy')}
@@ -234,7 +234,7 @@ const Information = ({ data }: Props) => {
           </p>
         </li>
 
-        <li className='list__item'>
+        <li className='list__item' data-testid='is_datacenter'>
           <p className='item__text'>
             <span className='text--emphasis'>
               {t('home.dataDisplayList.dataCenter')}

@@ -11,7 +11,9 @@
     "lint": "eslint src --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint --fix src",
     "format": "prettier --write src --config ./.prettierrc",
-    "prepare": "husky"
+    "prepare": "husky",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
   },
   "config": {
     "commitizen": {
